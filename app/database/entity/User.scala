@@ -2,6 +2,7 @@ package database.entity
 
 import java.time.LocalDateTime
 
+import com.mohiva.play.silhouette.api.Identity
 import play.api.libs.json.{JsValue, Json, Writes}
 
 object User {
@@ -15,4 +16,12 @@ object User {
   }
 }
 
-case class User (id: Long, firstname: String, lastname: String, password: String, createdAt: LocalDateTime, updatedAt: LocalDateTime, deletedAt: Option[LocalDateTime]) extends BaseEntity
+case class User (
+  id: Long,
+  firstname: String,
+  lastname: String,
+  password: String,
+  createdAt: LocalDateTime,
+  updatedAt: LocalDateTime,
+  deletedAt: Option[LocalDateTime]
+) extends BaseEntity with Identity
